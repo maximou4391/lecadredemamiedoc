@@ -35,7 +35,7 @@ Les informations suivantes sont stockées **uniquement sur votre appareil** et n
 | Nom de l'expéditeur | Affichage de l'auteur de la photo |
 | Paramètres de l'application | Préférences utilisateur (délai diaporama, mode nuit, etc.) |
 | Compteur de photos reçues | Gestion de l'essai gratuit (50 photos) |
-| Statut d'achat premium | Vérification de l'accès illimité (3,99€ à vie) |
+| Statut d'achat premium | Vérification de l'accès illimité (4,99€ à vie) |
 
 ### Sauvegarde Android
 
@@ -56,7 +56,7 @@ L'application se connecte à votre compte email (Gmail ou autre) via le protocol
 
 ## Achats intégrés
 
-L'application propose un achat unique de **3,99€** pour débloquer les photos illimitées à vie.
+L'application propose un achat unique de **4,99€** pour débloquer les photos illimitées à vie.
 
 - **Essai gratuit** : 50 photos offertes
 - **Premium** : Photos illimitées, sans abonnement
