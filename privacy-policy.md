@@ -1,6 +1,6 @@
 # Politique de Confidentialité - Le Cadre de Mamie
 
-**Dernière mise à jour : 8 février 2026**
+**Dernière mise à jour : 21 septembre 2026**
 
 ## Introduction
 
@@ -16,7 +16,7 @@ Contact : maxime__andre@live.fr
 
 ## Données collectées
 
-### Données que nous NE collectons PAS sur nos serveurs
+### Données que nous ne collectons pas sur nos serveurs
 
 - ❌ Aucune donnée envoyée à nos serveurs (nous n'en avons pas)
 - ❌ Aucune donnée de localisation
@@ -30,9 +30,9 @@ Les informations suivantes sont stockées **uniquement sur votre appareil** et n
 
 | Donnée | Utilisation |
 |--------|-------------|
-| Identifiants email (IMAP) | Connexion au compte email pour récupérer les photos |
+| Adresse du compte Gmail dédié | Identifier le compte autorisé pour la synchronisation |
 | Photos reçues par email | Affichage dans le cadre photo |
-| Nom de l'expéditeur | Affichage de l'auteur de la photo |
+| Nom et adresse de l'expéditeur, objet et date de l'email | Affichage de l'auteur et de la légende, réponses facultatives |
 | Paramètres de l'application | Préférences utilisateur (délai diaporama, mode nuit, etc.) |
 | Compteur de photos reçues | Gestion de l'essai gratuit (50 photos) |
 | Statut d'achat premium | Vérification de l'accès illimité (4,99€ à vie) |
@@ -43,14 +43,30 @@ Si vous avez activé la sauvegarde Android sur votre appareil, certaines donnée
 
 ---
 
-## Connexion Email (IMAP)
+## Connexion à Gmail avec Google OAuth
 
-L'application se connecte à votre compte email (Gmail ou autre) via le protocole **IMAP sécurisé (SSL/TLS)** pour récupérer les photos envoyées par votre famille.
+L'application utilise **Google OAuth 2.0** et l'API Gmail. Vous choisissez le compte Google à connecter et Google vous présente les autorisations demandées. L'application ne demande, ne connaît et ne stocke jamais votre mot de passe Google.
 
-- Vos identifiants email sont stockés **localement** sur votre appareil uniquement
-- La connexion est chiffrée (SSL/TLS)
-- Nous n'avons jamais accès à vos identifiants
-- Nous vous recommandons de créer une adresse email dédiée au cadre photo
+Nous demandons l'autorisation Gmail `gmail.modify`. Elle permet à l'application de :
+
+- rechercher les nouveaux emails non lus dans la boîte de réception et le dossier spam ;
+- lire l'expéditeur, l'objet, la date et les pièces jointes image de ces emails ;
+- télécharger les images sur la tablette ;
+- marquer comme lus les emails dont les photos ont été traitées ;
+- rechercher les emails avec pièces jointes lorsque vous lancez volontairement une restauration ;
+- envoyer, si les fonctions correspondantes sont activées, un email à l'expéditeur pour signaler qu'une photo a été vue ou aimée, ou pour informer du quota restant.
+
+Les jetons d'accès temporaires sont fournis et gérés par les services Google sur l'appareil. Ils ne sont pas transmis à nos serveurs.
+
+**Nous recommandons fortement de créer une adresse Gmail réservée au cadre photo et de ne pas connecter une adresse personnelle ou professionnelle.**
+
+Vous pouvez retirer l'autorisation depuis les [connexions à des applications tierces de votre compte Google](https://myaccount.google.com/connections) ou réinitialiser le cadre depuis ses réglages.
+
+### Utilisation limitée des données Google
+
+L'utilisation et le transfert par Le Cadre de Mamie des informations reçues des API Google respectent la [Politique relative aux données utilisateur des services API Google](https://developers.google.com/terms/api-services-user-data-policy), y compris les exigences d'utilisation limitée (« Limited Use »).
+
+Les données Gmail sont utilisées uniquement pour fournir les fonctions visibles du cadre décrites ci-dessus. Elles ne sont pas utilisées pour la publicité, le profilage, l'analyse marketing, la vente de données ou l'entraînement de modèles d'intelligence artificielle. Elles ne sont pas transférées à des tiers, sauf lorsque cela est nécessaire au fonctionnement demandé par l'utilisateur ou imposé par la loi.
 
 ---
 
@@ -72,27 +88,34 @@ L'application demande les permissions suivantes :
 
 | Permission | Raison |
 |------------|--------|
-| **Internet** | Connexion au serveur email (IMAP) pour récupérer les photos |
+| **Internet** | Connexion sécurisée aux API Google et à Google Play |
+| **Compte Google / Gmail** | Autoriser l'accès à la boîte Gmail dédiée choisie |
 | **Démarrage automatique** | Lancer l'application au démarrage de l'appareil (mode kiosk) |
 | **Maintenir l'écran allumé** | Empêcher la mise en veille pendant l'affichage |
-| **Stockage** | Sauvegarder les photos reçues localement |
+| **Notifications** | Signaler l'activité de synchronisation et l'arrivée de nouvelles photos |
 
 ---
 
 ## Partage de données
 
-**Nous ne partageons aucune donnée avec des tiers.**
+**Nous ne vendons et ne partageons aucune donnée à des fins publicitaires ou commerciales.**
 
-L'application fonctionne de manière autonome sur votre appareil sans envoyer de données à des serveurs externes (à l'exception des services Google pour la synchronisation des photos si vous l'activez).
+L'application communique directement avec les services Google pour l'authentification, Gmail, la synchronisation en arrière-plan et, dans la version Play Store, les achats intégrés. Elle n'envoie pas vos emails ou photos à des serveurs exploités par l'éditeur de l'application.
 
 ---
 
 ## Sécurité
 
 - Vos photos et données restent sur votre appareil
-- Les connexions email utilisent le chiffrement **SSL/TLS**
+- Les communications avec les API Google utilisent le chiffrement **HTTPS/TLS**
 - L'application n'établit pas de connexion avec nos serveurs car nous n'en avons pas
-- Vos identifiants email sont stockés localement et ne sont jamais partagés
+- Votre mot de passe Google n'est jamais demandé ni stocké par l'application
+
+## Conservation des données
+
+Les photos et leurs informations associées restent sur la tablette jusqu'à leur suppression depuis les réglages, l'effacement des données Android ou la désinstallation de l'application. Les emails d'origine restent soumis aux règles de conservation du compte Gmail ; l'application marque seulement comme lus les messages traités automatiquement.
+
+Les préférences de l'application et le compteur d'essai peuvent être inclus dans la sauvegarde Android de l'appareil si celle-ci est activée. Cette sauvegarde est gérée par Google.
 
 ---
 
@@ -101,7 +124,8 @@ L'application fonctionne de manière autonome sur votre appareil sans envoyer de
 Vous pouvez supprimer vos données à tout moment :
 
 - **Supprimer des photos** : Menu Réglages → Supprimer des photos
-- **Réinitialiser l'application** : Menu Réglages → Reconfigurer le cadre
+- **Déconnecter Gmail et réinitialiser l'application** : Menu Réglages → Réinitialiser le cadre
+- **Retirer l'accès Google** : [Compte Google → Connexions à des applications tierces](https://myaccount.google.com/connections)
 - **Supprimer toutes les données** : Désinstaller l'application ou effacer les données dans les paramètres Android
 
 Pour toute demande de suppression de données, contactez-nous : maxime__andre@live.fr

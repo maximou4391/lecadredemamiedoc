@@ -12,10 +12,12 @@
 
 La famille envoie des photos par email → Elles s'affichent automatiquement sur la tablette de Mamie.
 
+Une adresse Gmail dédiée au cadre est nécessaire. Lors de la configuration, l'application explique comment créer cette adresse et demande l'autorisation d'accéder aux nouveaux emails reçus afin d'en télécharger les photos.
+
 ## 💰 Tarifs
 
 - **Gratuit** : 50 photos offertes
-- **Premium** : 3,99€ une seule fois, à vie (sans abonnement)
+- **Premium** : 4,99€ une seule fois, à vie (sans abonnement)
 
 ## 📱 Fonctionnalités
 
@@ -25,6 +27,7 @@ La famille envoie des photos par email → Elles s'affichent automatiquement sur
 - 🔒 Mode Kiosk (sécurisé)
 - ♿ Lecture vocale pour les malvoyants
 - 👆 Navigation ultra simple
+- ⚙️ Réglages protégés par une confirmation à faire glisser
 
 ---
 
